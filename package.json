@@ -1,0 +1,31 @@
+{
+  "name": "portal_inz",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "helmet": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "nodemailer-express-handlebars": "^4.0.0",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.4.0"
+  },
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Piotr Stępień",
+  "license": "ISC"
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://*;">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' http://* ">    
+    <link rel="stylesheet" href="/style.css" />
+    <title>Panel Użytkownika</title>
+</head>
+<body>
+    <div class="h">
+    <h1>Panel Użytkownika</h1>
+    </div>
+
+    <div class="user-panel">
+        <h4>Witaj</h4>
+        <p> {{userName}} </p>
+        <p> {{email}}</p>
+       
+
+        
+        <input type="button" class="form__button" value="Zmień Nazwę użytkownika" id="buttonChangeUsername">
+
+        <center>
+        <form  id="form" class="form" autocomplete="off" action="/auth/userPanel/changeUsername" method="POST" >
+            
+            <div  class="form__input-container">
+                <input
+                    aria-label="old_username"
+                    class="form__input"
+                    type="text"
+                    id="old_user"
+                    placeholder=" "
+                    name="old_username"
+                    required
+                />
+                <label class="form__input-label" for="old_username">Obecna Nazwa</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="new_username"
+                    class="form__input"
+                    type="text"
+                    id="new_user"
+                    placeholder=" "
+                    name="new_username"
+                    required
+                />
+                <label class="form__input-label" for="new_username">Nowa Nazwa</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="text"
+                    class="form__input"
+                    type="text"
+                    id="new_username_confirm"
+                    placeholder=" "
+                    name="new_username_confirm"
+                    required
+                />
+                <label class="form__input-label" for="new_username_confirm">Powtórz Nową Nazwę</label>
+            </div>
+            <div class="form__spacer" aria-hidden="true">
+            </div>
+            <button type="submit" class="form__button" id="buttonSubmit1" >Potwierdź</button>
+
+        </form>
+        </center>
+
+        <input type="button" class="form__button" value="Zmień Hasło" id="buttonChangePassword">
+        <center>
+        <form  id="form2" class="form" autocomplete="off" action="/auth/userPanel/changePassword" method="POST" >
+            
+            <div  class="form__input-container">
+                <input
+                    aria-label="old_password"
+                    class="form__input"
+                    type="password"
+                    id="old_password"
+                    placeholder=" "
+                    name="old_password"
+                    required
+                />
+                <label class="form__input-label" for="old_password">Obecne Hasło</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="new_password"
+                    class="form__input"
+                    type="password"
+                    id="new_password"
+                    placeholder=" "
+                    name="new_password"
+                    required
+                />
+                <label class="form__input-label" for="new_password">Nowe Hasło</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Password"
+                    class="form__input"
+                    type="password"
+                    id="password"
+                    placeholder=" "
+                    name="new_password_confirm"
+                    required
+                />
+                <label class="form__input-label" for="password">Powtórz Nowe Hasło</label>
+            </div>
+            <div class="form__spacer" aria-hidden="true">
+            </div>
+            <button type="submit" class="form__button" id="buttonSubmit2" >Potwierdź</button>
+
+        </form>
+        </center>
+
+        <input type="button" class="form__button" value="Zmień Email" id="buttonChangeEmail">
+        <center>
+        <form  id="form3" class="form" autocomplete="off" action="/auth/userPanel/changeEmail" method="POST" >
+            
+            <div  class="form__input-container">
+                <input
+                    aria-label="old_email"
+                    class="form__input"
+                    type="email"
+                    id="old_email"
+                    placeholder=" "
+                    name="old_email"
+                    required
+                />
+                <label class="form__input-label" for="old_email">Obecny Email</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="new_email"
+                    class="form__input"
+                    type="email"
+                    id="user"
+                    placeholder=" "
+                    name="new_email"
+                    required
+                />
+                <label class="form__input-label" for="new_email">Nowy Email</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="new_email_confirm"
+                    class="form__input"
+                    type="email"
+                    id="new_email_confirm"
+                    placeholder=" "
+                    name="new_email_confirm"
+                    required
+                />
+                <label class="form__input-label" for="new_email_confirm">Powtórz Nowy Email</label>
+            </div>
+            <div class="form__spacer" aria-hidden="true">
+            </div>
+            <button type="submit" class="form__button" id="buttonSubmit3" >Potwierdź</button>
+        
+
+        </form>
+        </center>
+
+        <div class="alert_container">
+                {{#if message }}
+        
+                    <h4 class="alert_message"> {{message}} </h4>
+        
+                {{/if}}
+        </div>
+
+        <div class="form__spacer" aria-hidden="true"></div>
+        <a class="form__button" href="/logout">Wyloguj</a>
+
+    </div>
+
+<script src="/open_form_on_button_click.js"></script>
+</body>
+</html>

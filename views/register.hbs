@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css" />
+        <title>Rejestracja</title>
+    </head>
+    <body>
+        <div class="bg" aria-hidden="true">
+            <div class="bg__dot"></div>
+            <div class="bg__dot"></div>
+        </div>
+        
+        <h1>Zarejestruj Się</h1>
+
+        <form name="registerForm" class="form" autocomplete="off" action="/auth/register" method="POST" onsubmit="return validateForm()" >
+
+            <div class="form__icon" aria-hidden="true"></div>
+            <div class="form__input-container">
+                <input
+                    aria-label="User"
+                    class="form__input"
+                    type="text"
+                    id="user"
+                    placeholder=" "
+                    name="username"
+                    required
+                />
+                <label class="form__input-label" for="user">Nickname</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Password"
+                    class="form__input"
+                    type="password"
+                    id="password"
+                    placeholder=" "
+                    name="password"
+                    required
+                />
+                <label class="form__input-label" for="password">Hasło</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Password"
+                    class="form__input"
+                    type="password"
+                    id="password_confirm"
+                    placeholder=" "
+                    name="password_confirm"
+                    required
+                />
+                <label class="form__input-label" for="password_confirm">Powtórz Hasło</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Password"
+                    class="form__input"
+                    type="password"
+                    id="mobilepassword"
+                    placeholder=" "
+                    name="mobilepassword"
+                    required
+                />
+                <label class="form__input-label" for="mobilepassword">Hasło do aplikacji mobilnej</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Email"
+                    class="form__input"
+                    type="email"
+                    id="email"
+                    placeholder=" "
+                    name="email"
+                    required
+                />
+                <label class="form__input-label" for="user">Email</label>
+            </div>
+
+            <div class="form__input-container">
+                <input
+                    aria-label="Pin"
+                    class="form__input"
+                    type="text"
+                    id="pin"
+                    placeholder=" "
+                    name="pin"
+                    required
+                />
+                <label class="form__input-label" for="pin">Hasło Uwierzytelniające</label>
+            </div>
+
+            <div class="form__input-container">
+                <p>Wybierz pytanie weryfikacyjne oraz podaj odpowiedź</p>
+                <select name="question" id="">
+                    <option value="car">Ulubiona marka samochodów</option>
+                    <option value="game">Ulubiona gra komputerowa</option>
+                </select>
+            </div>            
+
+            <div class="form__input-container">
+                <input
+                    aria-label="answer"
+                    class="form__input"
+                    type="text"
+                    id="answer"
+                    placeholder=" "
+                    name="answer"
+                    required
+                />
+                <label class="form__input-label" for="answer">Odpowiedź</label>
+            </div>
+
+            <div class="form__spacer" aria-hidden="true"></div>
+            <button type="submit" class="form__button">Utwórz Konto</button>
+
+            <div class="alert_container">
+                {{#if message }}
+    
+                    <h4 class="alert_message"> {{message}} </h4>
+    
+                {{/if}}
+            </div>
+
+        </form>
+
+</body>
+</html>
